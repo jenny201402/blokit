@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery瀑布流插件BlocksIt - 站长素材</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel='stylesheet' href='css/style.css' media='screen' />
+<script src="js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<!--<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>-->
+<![endif]-->
+<script src="js/blocksit.min.js"></script>
+<script>
+$(document).ready(function() {
+	 
+	
+	//blocksit define
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 5,
+			offsetX: 8,
+			offsetY: 8,
+			blockElement: '.grid'
+		});
+	});
+	
+	//window resize
+	var currentWidth = 1100;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1100) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1100;
+			col = 5;
+		}
+		
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+<!-- Content -->
+<section id="wrapper">
+	<hgroup>
+		<h2>jQuery瀑布流布局插件BlocksIt</h2> 
+		
+	</hgroup>
+<div id="container">
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/322.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/01.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/02.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<!--<div class="imgholder">-->
+			<img src="images/03.jpg" />
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img17.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/04.jpg" />
+		</div>
+		
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img16.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img21.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img28.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img2.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img24.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img19.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img5.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img25.jpg" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="images/img20.jpg" />
+	</div> <!---->
+</div>
+</section>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
